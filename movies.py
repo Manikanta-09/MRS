@@ -56,7 +56,7 @@ def recommend(movie):
     index = movies_df[movies_df['title'] == movie].index[0]
     distances = sorted(list(enumerate(similarity[index])),reverse=True,key = lambda x: x[1])
     for i in distances[1:6]:
-        st.markdown(f"<h4 style='text-align: center; color: red;'>{movies_df.iloc[i[0]].title}</h4>", unsafe_allow_html=True)
+        st.markdown(f"<h4 style='color: red;'>{movies_df.iloc[i[0]].title}</h4>", unsafe_allow_html=True)
 try:
     text=st.text_input('Enter')
     recommend(text)
