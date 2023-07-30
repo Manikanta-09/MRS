@@ -5,7 +5,7 @@ import nltk
 import streamlit as st
 st.title("Movie Recommendation System")
 movies = pd.read_csv('C:\\Users\\manoj\\OneDrive\\Desktop\\MRC\\tmdb_5000_movies.csv')
-credits = pd.read_csv('C:\\Users\\manoj\\OneDrive\\Desktop\\MRC\\tmdb_5000_credits.csv')
+credits = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vR30_L-CBChz6v_NN73FpUwCk4P2DIRNGgaPyjF35ndcKwJAmM4gomHAw_G48Msc_Hn9uGK9I7hKYFF/pub?output=csv')
 movies = movies.merge(credits,on="title")
 movies = movies[['movie_id','title','overview','genres','keywords','cast','crew']]
 movies.dropna(inplace = True)
