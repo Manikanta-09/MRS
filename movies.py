@@ -57,5 +57,8 @@ def recommend(movie):
     distances = sorted(list(enumerate(similarity[index])),reverse=True,key = lambda x: x[1])
     for i in distances[1:6]:
         st.markdown(movies_df.iloc[i[0]].title)
-text=st.text_input('Enter')
-recommend(text)
+try:
+    text=st.text_input('Enter')
+    recommend(text)
+except:
+    st.markdown("Please enter movie name")
